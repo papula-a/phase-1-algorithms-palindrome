@@ -1,25 +1,17 @@
 function isPalindrome(word) {
-  // Write your algorithm here
-}
+  const lowercaseWord = word.toLowerCase();
+  let start = 0;
+  let end = lowercaseWord.length - 1;
 
-/* 
-  Add your pseudocode here
-*/
+  while (start < end) {
+    if (lowercaseWord[start] !== lowercaseWord[end]) {
+      return false;
+    }
+    start++;
+    end--;
+  }
 
-/*
-  Add written explanation of your solution here
-*/
-
-// You can run `node index.js` to view these console logs
-if (require.main === module) {
-  // add your own custom tests in here
-  console.log("Expecting: true");
-  console.log("=>", isPalindrome("racecar"));
-
-  console.log("");
-
-  console.log("Expecting: false");
-  console.log("=>", isPalindrome("robot"));
+  return true;
 }
 
 module.exports = isPalindrome;
